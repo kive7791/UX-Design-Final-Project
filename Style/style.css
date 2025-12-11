@@ -1,59 +1,149 @@
-/* General Body Style */
+/* =========================
+   Global / Base Styles
+   ========================= */
+
 body {
-  background-color: #121212;
-  /* dark background */
+  background-color: #121212;      /* dark background for main page */
   color: #e0e0e0;
   font-family: "Open Sans", sans-serif;
   margin: 0;
   padding: 0;
+}
 
-  /* Headings */
-  h1 {
-    color: #ff8c00;
-    /* orange title */
-    text-align: center;
-    margin-top: 20px;
-  }
+/* Headings */
+h1 {
+  color: #ff8c00;                 /* orange title */
+  text-align: center;
+  margin-top: 20px;
+}
 
-  h2 {
-    color: #ffa500;
-  }
+h2 {
+  color: #ffa500;
+}
 
-  /* Paragraphs */
-  p {
-    color: #cccccc;
-    line-height: 1.6;
-  }
+/* Paragraphs */
+p {
+  color: #dcdcdc;
+  line-height: 1.6;
+}
 
-  /* Lists */
-  ul {
-    border: 2px solid orange;
-  }
+/* Lists */
+ul {
+  border: 2px solid orange;
+}
 
-  ol {
-    border: 2px solid purple;
-  }
+ol {
+  border: 2px solid purple;
+}
 
-  /* Lists styling */
-  ol,
-  ul {
-    padding: 5px 20px;
-    border-radius: 4px;
-  }
+/* Lists styling */
+ol,
+ul {
+  padding: 5px 20px;
+  border-radius: 4px;
+}
 
-  /* Bold and emphasized text */
-  strong {
-    color: #ffa500;
-    /* orange accent */
-  }
+/* Bold and emphasized text */
+strong {
+  color: #ffa500;                 /* orange accent */
+}
 
-  em {
-    color: #bbbbbb;
-  }
+em {
+  color: #bbbbbb;
+}
 
-  /*Navbar */
-  .navbar-dark.bg-dark {
-    background-color: #0d0d0d !important;
-  }
+/* Navbar */
+.navbar-dark.bg-dark {
+  background-color: #0d0d0d !important;
+}
 
+/* =========================
+   Hero / Cover Section
+   ========================= */
+
+/* The hero uses .bg-light, so give it dark text for contrast */
+header.bg-light,
+header.bg-light h1,
+header.bg-light .lead,
+header.bg-light p {
+  color: #222222;                 /* dark text on light background */
+}
+
+/* Optional: accent color for strong text in hero */
+header.bg-light strong {
+  color: #b86a00;
+}
+
+/* =========================
+   High-Fidelity Carousel Video
+   ========================= */
+
+#highFidCarousel .carousel-inner {
+  /* so the inner content defines height correctly */
+  width: 100%;
+}
+
+/* Give each slide a consistent 16:9 aspect ratio */
+#highFidCarousel .carousel-item {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+/* Make both video and images fill that area */
+#highFidCarousel .carousel-item video,
+#highFidCarousel .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================
+   Carousel Controls
+   ========================= */
+
+/* Global style for all carousel prev/next icons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(255, 193, 7, 0.95);   /* Bootstrap-y yellow */
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  background-size: 60% 60%;      /* keep arrow smaller inside circle */
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Make the white arrow stand out on yellow */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: none;                   /* avoid Bootstrap’s default filter */
+}
+
+/* Ensure controls are visible on both dark and light backgrounds */
+.carousel-control-prev,
+.carousel-control-next {
+  opacity: 0.9;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
+
+/* =========================
+   Figure Captions – High Contrast
+   ========================= */
+
+.figure-caption {
+  color: #ffd77a !important;     /* warm, readable yellow on dark bg */
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 0.25rem;
+  opacity: 0.95;
+}
+
+/* Optional: If a caption appears in a .bg-light area, adjust automatically */
+.bg-light .figure-caption {
+  color: #444444 !important;     /* dark gray on light background */
 }
