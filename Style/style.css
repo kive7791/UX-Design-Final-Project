@@ -64,7 +64,7 @@ em {
    Hero / Cover Section
    ========================= */
 
-/* The hero uses .bg-light, so give it dark text for contrast */
+/* The hero uses .bg-light, so dark text for contrast */
 header.bg-light,
 header.bg-light h1,
 header.bg-light .lead,
@@ -73,7 +73,7 @@ header.bg-light p {
   /* dark text on light background */
 }
 
-/* Optional: accent color for strong text in hero */
+/* Accent color for strong text in hero */
 header.bg-light strong {
   color: #b86a00;
 }
@@ -159,7 +159,7 @@ header.bg-light strong {
   opacity: 0.95;
 }
 
-/* Optional: If a caption appears in a .bg-light area, adjust automatically */
+/*If a caption appears in a .bg-light area, adjust automatically */
 .bg-light .figure-caption {
   color: #444444 !important;
   /* dark gray on light background */
@@ -173,7 +173,8 @@ header.bg-light strong {
 #highFidCarousel .carousel-caption h5,
 #heroCarousel .carousel-caption h5,
 #heroCarousel .carousel-caption p {
-  color: #ffd77a !important;   /* your yellow accent */
+  color: #ffd77a !important;
+  /*yellow accent */
 }
 
 /* Stronger readability */
@@ -181,5 +182,5 @@ header.bg-light strong {
 #midFidCarousel .carousel-caption,
 #highFidCarousel .carousel-caption,
 #heroCarousel .carousel-caption {
-  text-shadow: 0 0 6px rgba(0,0,0,0.8);
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
 }
