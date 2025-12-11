@@ -3,7 +3,8 @@
    ========================= */
 
 body {
-  background-color: #121212;      /* dark background for main page */
+  background-color: #121212;
+  /* dark background for main page */
   color: #e0e0e0;
   font-family: "Open Sans", sans-serif;
   margin: 0;
@@ -12,7 +13,8 @@ body {
 
 /* Headings */
 h1 {
-  color: #ff8c00;                 /* orange title */
+  color: #ff8c00;
+  /* orange title */
   text-align: center;
   margin-top: 20px;
 }
@@ -45,7 +47,8 @@ ul {
 
 /* Bold and emphasized text */
 strong {
-  color: #ffa500;                 /* orange accent */
+  color: #ffa500;
+  /* orange accent */
 }
 
 em {
@@ -66,7 +69,8 @@ header.bg-light,
 header.bg-light h1,
 header.bg-light .lead,
 header.bg-light p {
-  color: #222222;                 /* dark text on light background */
+  color: #222222;
+  /* dark text on light background */
 }
 
 /* Optional: accent color for strong text in hero */
@@ -75,28 +79,36 @@ header.bg-light strong {
 }
 
 /* =========================
-   High-Fidelity Carousel Video
+   Compact Fidelity Carousels
    ========================= */
-
-#highFidCarousel .carousel-inner {
-  /* so the inner content defines height correctly */
-  width: 100%;
-}
-
-/* Give each slide a consistent 16:9 aspect ratio */
+#heroCarousel .carousel-item,
+#lowFidCarousel .carousel-item,
+#midFidCarousel .carousel-item,
 #highFidCarousel .carousel-item {
   position: relative;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 3 / 2;
+  /* smaller footprint */
   overflow: hidden;
+  height: auto;
+  max-height: 480px;
+  /* adjust to desired height */
+  overflow: hidden;
+  background-color: #000;
+  /* fills empty space on letterboxing */
 }
 
-/* Make both video and images fill that area */
-#highFidCarousel .carousel-item video,
-#highFidCarousel .carousel-item img {
+/* Ensure wireframes and video fit nicely */
+#heroCarousel img,
+#lowFidCarousel img,
+#midFidCarousel img,
+#highFidCarousel img,
+#highFidCarousel video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
+  object-fit: contain;
+  /* no cropping; clean display */
+  background-color: #000;
+  /* fills empty space visually */
 }
 
 /* =========================
@@ -106,18 +118,21 @@ header.bg-light strong {
 /* Global style for all carousel prev/next icons */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: rgba(255, 193, 7, 0.95);   /* Bootstrap-y yellow */
+  background-color: rgba(255, 193, 7, 0.95);
+  /* Bootstrap-y yellow */
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
-  background-size: 60% 60%;      /* keep arrow smaller inside circle */
+  background-size: 60% 60%;
+  /* keep arrow smaller inside circle */
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
 }
 
 /* Make the white arrow stand out on yellow */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  filter: none;                   /* avoid Bootstrap’s default filter */
+  filter: none;
+  /* avoid Bootstrap’s default filter */
 }
 
 /* Ensure controls are visible on both dark and light backgrounds */
@@ -136,7 +151,8 @@ header.bg-light strong {
    ========================= */
 
 .figure-caption {
-  color: #ffd77a !important;     /* warm, readable yellow on dark bg */
+  color: #ffd77a !important;
+  /* warm, readable yellow on dark bg */
   font-size: 0.9rem;
   text-align: center;
   margin-top: 0.25rem;
@@ -145,5 +161,25 @@ header.bg-light strong {
 
 /* Optional: If a caption appears in a .bg-light area, adjust automatically */
 .bg-light .figure-caption {
-  color: #444444 !important;     /* dark gray on light background */
+  color: #444444 !important;
+  /* dark gray on light background */
+}
+
+/* ========================================
+   CAROUSEL – Yellow Caption Text
+   ======================================== */
+#lowFidCarousel .carousel-caption h5,
+#midFidCarousel .carousel-caption h5,
+#highFidCarousel .carousel-caption h5,
+#heroCarousel .carousel-caption h5,
+#heroCarousel .carousel-caption p {
+  color: #ffd77a !important;   /* your yellow accent */
+}
+
+/* Stronger readability */
+#lowFidCarousel .carousel-caption,
+#midFidCarousel .carousel-caption,
+#highFidCarousel .carousel-caption,
+#heroCarousel .carousel-caption {
+  text-shadow: 0 0 6px rgba(0,0,0,0.8);
 }
